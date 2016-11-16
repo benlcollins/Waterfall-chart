@@ -1,0 +1,44 @@
+<script>
+
+var Render = (function(render) {
+
+  render.build = function() {
+  
+    // the chart element is already in place
+    var chartElem = document.getElementById("chart");
+    
+    // create a new data table
+    var table = new google.visualization.DataTable();
+    
+    // get a copy of the data and headings
+    var heads = App.globals.data[0].slice();
+    var rows = App.globals.data.slice(1,11).map(function(d) {
+      return d.slice(0,2);
+    });
+    
+    // add the headings
+    table.addColumn('string',heads[0]);
+    table.addColumn('string',heads[1]);
+    
+    // add the data
+    table.addRows(rows);
+    
+    // Set chart options
+    var options = {
+      'title': 'Waterfall chart',
+      'width': 280,
+      'height': 220
+    };
+    
+    // show the chart
+    var chart = new google.visualization.BarChart(chartElem);
+    chart.draw(table, options);
+  };
+  
+  return render;
+  
+})(Render || {});
+
+</script>
+
+

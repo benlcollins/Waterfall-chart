@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<!-- styles -->
+<?!= HtmlService.createHtmlOutputFromFile('styles.css').getContent(); ?>
+
+<div class = "content">
+
+  <div class = "block">
+    <div id = "chart"></div>
+  </div>
+  
+  <div class = "block">
+    <div id = "message" class = "message"></div>
+  </div>
+  
+</div>
+
+<!-- javascript -->
+<script type = "text/javascript" src = "https://www.google.com/jsapi"></script>
+
+<?!= HtmlService.createHtmlOutputFromFile('render.js').getContent(); ?>
+<?!= HtmlService.createHtmlOutputFromFile('client.js').getContent(); ?>
+<?!= HtmlService.createHtmlOutputFromFile('app.js').getContent(); ?>
+<?!= HtmlService.createHtmlOutputFromFile('main.js').getContent(); ?>
+
+
