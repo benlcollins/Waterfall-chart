@@ -9,6 +9,8 @@ function doGet(e) {
 function onOpen(e) {
   SpreadsheetApp.getUi()
     .createMenu('HTML Waterfall Chart')
+    .addItem('Insert chart v1...','waterfallChart')
+    .addItem('Insert chart v2...','waterfallChart2')
     .addItem('As dialog...','showDialogChart')
     .addItem('As sidebar...','showSidebarChart')
     .addToUi();
@@ -33,19 +35,13 @@ function showDialogChart() {
     .showModalDialog(html, 'Chart using gviz');
 }
 
-function showSideBarChart() {
+function showSidebarChart() {
   var ui = HtmlService.createTemplateFromFile('index.html')
     .evaluate()
     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .setTitle('Chart using gviz');
   
   SpreadsheetApp.getUi().showSidebar(ui);
-}
-
-// testing
-function loggerLog() {
-  var data = getData();
-  Logger.log(data);
 }
 
 

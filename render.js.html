@@ -10,11 +10,16 @@ var Render = (function(render) {
     // create a new data table
     var table = new google.visualization.DataTable();
     
+    console.log(App.globals.data);
+    
     // get a copy of the data and headings
     var heads = App.globals.data[0].slice();
+    console.log(heads);
+    
     var rows = App.globals.data.slice(1,11).map(function(d) {
       return d.slice(0,2);
     });
+    console.log(rows);
     
     // add the headings
     table.addColumn('string',heads[0]);
